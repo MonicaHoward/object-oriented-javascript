@@ -2,7 +2,21 @@
 
 //your code here...
 
+class WhyClass {
+    constructor(purpose){
+        this.purpose = purpose
+    }
+    explain(){
+        console.log(this.purpose)
+    }
+    pieces(){
+        console.log("Classes are created with the 'class' keyword. Classes include properties and methods.")
+    }
+}
 
+const myClass = new WhyClass("Classes create a blueprint for creating Objects");
+myClass.explain();
+myClass.pieces();
 
 /*2. You are exploring the rainforests of the Amazon.  You have observed many different types of wildlife on your excursion.  To jog your memory, some different types of wildlife that you observed are found in the following URL : https://www.ietravel.com/blog/amazon-rainforest-animals-beginners-guide-21-species.  Feel free to use other resources online if you wish.
 
@@ -10,6 +24,35 @@ Create a class that can categorize at least 6 of the creatures that you recall o
 
 
 //your code here...
+
+class AmazonAnimal {
+    constructor(name, classification, diet, fur, habitat){
+        this.name = name;
+        this.classification = classification;
+        this.diet = diet
+        this.fur = fur;
+        this.habitat = habitat;
+    }
+    eat(){
+        console.log(`The ${this.name} eats ${this.diet}`)
+    }
+    dwell(){
+        console.log(`The ${this.name} lives in a ${this.habitat} habitat`)
+    }
+}
+
+const amazonRiverDolphin = new AmazonAnimal("Amazon River Dolphin", "mammal", "fish", false , "Amazon River");
+
+const jaguar = new AmazonAnimal("Jaguar", "mammal", "animals", true, "Amazon Jungle" );
+
+const jaguarundi = new AmazonAnimal("Jaguarundi", "mammal", "small animals", true, "Amazon Jungle" );
+
+const puma = new AmazonAnimal("Puma", "mammal", "small animals", true, "Amazon Jungle" );
+
+const greenAnaconda = new AmazonAnimal("Green Anaconda", "reptile", "animals", false, "Amazon River" );
+
+const poisonDartFrogs = new AmazonAnimal("Poison Dart Frogs", "reptile", " insects", false, "Amazon Jungle" );
+
 
 
 
@@ -19,7 +62,18 @@ Create a class that can categorize at least 6 of the creatures that you recall o
 
 
 class Shape {
-    //your code here...
+    constructor(name, sides, base, height){
+        this.name = name;
+        this.sides = sides;
+        this.base = base;
+        this.height = height;
+    }
+    calcArea(){
+
+    }
+    calcPerimeter(){
+        
+    }
 }
 
 
