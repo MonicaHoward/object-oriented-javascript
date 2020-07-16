@@ -6,14 +6,143 @@
     - Review class.  It should have a rating and user property.
     -Prevent the properties from being accessed by outside code, using the encapsulation concept of "private variables".  Create methods that return the values of these private variables in case other pieces of the code need to access the data of the 4 classes.  Also create methods that allow outside code to "set" new values for the properties on the classes, without directly manipulating the values themselves. 
 
-    //your code here...
+    //your code here... */
 
+class Books {
 
+    #author = '';
+    #publisher = '';
 
+    constructor(author, publisher) {
+        this.#author = #author;
+        this.#publisher = #publisher;
+    }
+    getAuthor()
+      {
+        return this.#author 
+      }
+    getPublisher()
+    {
+    return this.#publisher 
+    }
 
+    setAuthor(x)
+    {
+    this.#author = x;
+    }
 
+    
 
+    setPublisher(x)
+    {
+    this.#publisher = x;
+    }
+}
 
+class Author {
+    #books = [];
+    #name = '';
+
+    constructor(books, name) {
+        this.#name = #name;
+        this.#books = #books;
+    }
+
+    getname()
+    {
+      return this.#name 
+    }
+  
+    setname(x)
+    {
+      this.#name = x;
+    }
+  
+    getbooks()
+    {
+      return this.#books 
+    }
+  
+    setbooks(x)
+    {
+      this.#books = x;
+    }
+}
+
+class Publisher {
+
+    #authors = [];
+    #books = [];
+
+    constructor(authors, books) {
+        this.#authors = #authors;
+        this.#books = #books;
+    }
+
+    newAuthor(name, book) {
+        this.#authors.push(name);
+        this.#books.push(books);
+        return this.#authors, this.#books;
+    }
+
+    get authors()
+    {
+      return this.#authors 
+    }
+  
+    setAuthors(x)
+    {
+      this.#authors = x;
+    }
+  
+    getBooks()
+    {
+      return this.#books 
+    }
+  
+    setBooks(x)
+    {
+      this.#books = x;
+    }
+}
+
+class Review {
+    #rating = '';
+    #user = '';
+    constructor(rating, user) {
+        this.#rating = #rating;
+        this.#user = #user;
+    }
+    rate(stars) {
+        this.#rating = #stars;
+        return this.#rating;
+    }
+    review() {
+        return this.#rating, this.#user;
+    }
+}
+
+getRating()
+  {
+    return this.#rating 
+  }
+  
+  setRating(x)
+  {
+    this.#rating = x;
+  }
+  
+  getUser()
+  {
+    return this.#user 
+  }
+  
+  setUser(x)
+  {
+    this.#user = x;
+  }
+
+/*
 2. Create the following classes:
     - Umbrella class.  It should have a an organization name.  It should only have a single instance.  Umbrella is the "Parent Organization" e.g. Allegis Group
     - Company class. It should have a compnay name and # of employees.  Create at least 3 different companies that are children of the Umbrella Organization.  (e.g. TEKsystems, Aerotek, etc.)
@@ -22,14 +151,46 @@
     
     - For each class, add 2 properties and 2 methods to each.  The properties and methods should make sense, considering what the classes are supposed to be representing.
 
+*/
+
+class Umbrella 
+{
+  name;
+  companies = [];
+  
+  constructor (name)
+  {
+    this.name = name;
+  }
 
 
-    //your code here...
+}
+
+class Company extends Umbrella {
+	constructor(name, employees) {
+		super(parent);
+		(this.name = name), (this.employees = employees);
+    }
+    
+    yearEstablished = 1952
+	subsidiary() {
+		return `Proudly part of the ${this.parent} family`;
+	}
+	established() {
+		return `Established in ${year}`
+	}
+}
+
+const SamsInc = new Umbrella("SamsInc")
+
+const SamsClub = new Company("Sams Club", 190)
+const Walmart = new Company("Walmart", 401)
+const MurphyUSA = new Company("MurphyUSA")
 
 
 
-
-/****************************************************************************************************************************************************************************************   
+/*
+****************************************************************************************************************************************************************************************   
 Bonus Exercise:
 
 3. Building on Exercise 1, Do the following : 

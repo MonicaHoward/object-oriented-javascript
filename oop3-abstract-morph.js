@@ -18,14 +18,106 @@ These sub-classes MUST implement the abstract methods of move() and act(), which
 */
 
     class Creature {
-        //your code here...
-    }
-
-    class Human extends Creature {
-        //your code here...
-    }
-
-
+        constructor() {
+          if (this.constructor == Creature) {
+            throw new Error('Cannot instantiate abstract Creature class.');
+          }
+        }
+      
+        move() {
+          throw new Error('Cannot call abstract function "move".');
+        }
+      
+        act() {
+          throw new Error('Cannot call abstract function "act".');
+        }
+      }
+      
+      class Human extends Creature {
+        name;
+        food;
+      
+        constructor(name, food) {
+          super();
+          this.name = name;
+          this.food = food;
+        }
+      
+        speak() {
+          console.log(`${this.name}s speak a variety of languages including, English, Spanish, and Swahili`);
+        }
+      
+        eat() {
+          console.log(`${this.name}'s eat whatever they want including ${this.food}`);
+        }
+      
+        c
+      }
+      
+      class Bird extends Creature {
+        color;
+        species;
+      
+        constructor(color, species) {
+          super();
+          this.color = color;
+          this.species = species;
+        }
+      
+        move() {
+          console.log(`The ${this.species} moves from point A to point B.`);
+        }
+      
+        act() {
+          console.log(
+            `The ${this.species} acts on instinct and hangs out in trees, far from predators.`
+          );
+        }
+      
+        fly() {
+          console.log(
+            `The ${this.species} flies across the sky and lands on a branch.`
+          );
+        }
+      }
+      
+      class Reptile extends Creature {
+        species;
+        age;
+      
+        constructor(species, age) {
+          super();
+          this.species = species;
+          this.age = age;
+        }
+      
+        move() {
+          console.log(`The ${this.species} moves from point A to point B.`);
+        }
+      
+        act() {
+          console.log(`The ${this.species} acts on its instinct and hunts its prey.`);
+        }
+      
+        bask() {
+          console.log(`The ${this.species} basks in the sunlight.`);
+        }
+      }
+      
+      const h1 = new Human('Tom Collins', 38);
+      h1.move();
+      h1.act();
+      h1.code();
+      
+      const b1 = new Bird('blue', 'Tucan');
+      b1.move();
+      b1.act();
+      b1.fly();
+      
+      const r1 = new Reptile('Anole', 2);
+      r1.move();
+      r1.act();
+      r1.bask();
 
 
 /*
